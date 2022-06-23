@@ -1,0 +1,34 @@
+.wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+
+.header img {
+	width: 40px;
+}
+.header {
+	background-color: grey;
+}
+.main-content {
+	display: grid;
+	gap: 20px;
+	grid-template-areas: sidebar profile;
+	grid-template-columns: 2fr 10fr;
+	grid-template-rows: 1fr;
+}
+
+.main-profile {
+	grid-area: "profile";
+}
+.main-profile-img {
+	max-width: 100%;
+}
+.main-profile-avatar {
+	width: 50px;
+}
+
+
+.main-sidebar {
+	grid-area: "sidebar";
+}
