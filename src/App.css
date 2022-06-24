@@ -1,34 +1,21 @@
 .wrapper {
 	max-width: 1000px;
 	margin: 0 auto;
-}
-
-
-.header img {
-	width: 40px;
-}
-.header {
-	background-color: grey;
-}
-.main-content {
-	display: grid;
-	gap: 20px;
-	grid-template-areas: sidebar profile;
+	display: grid; 
+	grid-template-areas: header sidebar main footer;
+	grid-template-rows: 50px 2fr 50px;
 	grid-template-columns: 2fr 10fr;
+	gap: 10px;
+}
+
+.main {
+	grid-area: "main";
+	grid-column: 2/3;
 	grid-template-rows: 1fr;
 }
 
-.main-profile {
-	grid-area: "profile";
-}
-.main-profile-img {
-	max-width: 100%;
-}
-.main-profile-avatar {
-	width: 50px;
-}
 
 
-.main-sidebar {
-	grid-area: "sidebar";
-}
+
+
+

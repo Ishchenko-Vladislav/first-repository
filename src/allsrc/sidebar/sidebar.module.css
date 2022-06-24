@@ -1,0 +1,19 @@
+.main_sidebar {
+	grid-area: "sidebar";
+	background-color: rgb(133, 126, 126);
+	grid-column: 1/2;
+	grid-template-rows: 1fr;
+}
+
+.main_sidebar ul li:last-child {
+	margin-top: 30px;
+}
+
+.main_sidebar ul {
+	list-style: none;
+}
+
+.main_sidebar a {
+	text-decoration: none;
+	color: white;
+}
