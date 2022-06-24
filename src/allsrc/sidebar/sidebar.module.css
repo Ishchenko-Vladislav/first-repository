@@ -3,17 +3,34 @@
 	background-color: rgb(133, 126, 126);
 	grid-column: 1/2;
 	grid-template-rows: 1fr;
+	padding: 10px;
 }
 
 .main_sidebar ul li:last-child {
 	margin-top: 30px;
 }
-
 .main_sidebar ul {
-	list-style: none;
+	padding: 0;
 }
 
-.main_sidebar a {
+/* .main_sidebar li {
+	list-style: none;
+} */
+
+.link {
+	list-style: none;
 	text-decoration: none;
+	font-size: 20px;
+	text-align: left;
+}
+
+
+
+.main_sidebar a {
 	color: white;
+}
+
+
+a.active {
+	color: red;
 }

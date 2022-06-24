@@ -6,6 +6,9 @@ import Profile from "./allsrc/profile/profile";
 import Message from "./allsrc/message/message";
 import Footer from "./allsrc/footer/footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import News from "./allsrc/news/news";
+import Music from "./allsrc/music/music";
+import Settings from "./allsrc/settings/settings";
 
 function App() {
   return (
@@ -16,7 +19,10 @@ function App() {
         <div className="main">
           <Routes>
             <Route path="/Profile" element={<Profile />} />
-            <Route path="/Message" element={<Message />} />
+            <Route path="/Message/*" element={<Message />} />
+            <Route path="/News" element={<News />} />
+            <Route path="/Music" element={<Music />} />
+            <Route path="/Settings" element={<Settings />} />
           </Routes>
 
           {/* <Profile /> */}

@@ -1,0 +1,12 @@
+.dialogItem.active {
+	color: red;
+}
+.dialog {
+	font-size: 20px;
+	
+}
+
+.dialog a {
+	text-decoration: none;
+}
+.dialogItem {}
