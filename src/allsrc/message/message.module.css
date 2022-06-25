@@ -2,10 +2,16 @@
 
 .dialogs {
 display: grid;
-grid-template-columns: 3fr 8fr; 
+grid-template-columns: 3fr 8fr;
+/* max-height: 537px; */
+overflow: auto;
 }
 .dialog {
+border-right: 1px solid grey;
+margin: 0px 20px 0px 0px;
 	font-size: 20px;
+	height: 537px;
+overflow: auto;
 }
 
 
