@@ -3,37 +3,12 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-const dialogs = [
-  { id: 1, name: "Oleg" },
-  { id: 2, name: "Lera" },
-  { id: 3, name: "Sasha" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-  { id: 4, name: "Maks" },
-];
+import state from "./allsrc/allstate/state";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App dialogs={dialogs} />
+    <App state={state} />
   </React.StrictMode>
 );
 

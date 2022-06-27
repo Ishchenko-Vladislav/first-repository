@@ -1,7 +1,7 @@
 import Posts from "./posts";
 import s from "./profile.module.css"
 
-function Profile() {
+function Profile(props) {
 	return <div className={s.main_profile}>
 		<img className={s.main_profile_img} src="https://jpeg.org/images/jpegxt-home.jpg" alt="nature" />
 		<div className={s.prof}>
@@ -12,7 +12,7 @@ function Profile() {
 				<p>City: Kharkov</p>
 			</div>
 		</div>
-		<Posts />
+		<Posts posts={props.state} />
 	</div>;
 }
 

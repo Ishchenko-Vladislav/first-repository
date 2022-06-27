@@ -16,12 +16,14 @@ function App(props) {
       <div className="wrapper">
         <Header />
         <Sidebar />
+
         <div className="main">
           <Routes>
-            <Route path="/Profile" element={<Profile />} />
+            <Route path="/Profile" element={<Profile state={props.state} />} />
+
             <Route
               path="/Message/*"
-              element={<Message dialogs={props.dialogs} />}
+              element={<Message state={props.state} />}
             />
             <Route path="/News" element={<News />} />
             <Route path="/Music" element={<Music />} />

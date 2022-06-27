@@ -2,7 +2,10 @@
 import Post from "./post";
 import s from "./posts.module.css"
 
-function Posts() {
+function Posts(props) {
+	const post = props.posts.posts.map(a => {
+		return (<Post message={a.message} />)
+	})
 	return (
 		<div>
 			<div className={s.postsS}>
@@ -12,7 +15,8 @@ function Posts() {
 			</div>
 			<button>create post</button>
 			</div>
-		<Post message="hello"/>
+			{/* <Post message={props.state.posts} /> */}
+			{post}
 		</div>
 	);
 }

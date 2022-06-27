@@ -1,0 +1,31 @@
+let state = {
+  dialogs: [
+    { id: 1, name: "Oleg" },
+    { id: 2, name: "Lera" },
+    { id: 3, name: "Sasha" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+    { id: 4, name: "Maks" },
+  ],
+  posts: [{ message: "hello" }, { message: "hi" }, { message: "nee" }],
+};
+
+export default state;
