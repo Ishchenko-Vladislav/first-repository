@@ -12,7 +12,10 @@ function Profile(props) {
 				<p>City: Kharkov</p>
 			</div>
 		</div>
-		<Posts posts={props.state} />
+		<Posts
+			posts={props.posts}
+			addPosts={props.addPosts}
+			updatePostsText={props.updatePostsText} />
 	</div>;
 }
 

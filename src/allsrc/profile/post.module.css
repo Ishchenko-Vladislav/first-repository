@@ -3,4 +3,7 @@ width: 30px;
 }
 .post {
 	padding: 5px;
+	border: 1px solid grey;
+	min-height: 100px;
+	margin-bottom: 20px;
 }

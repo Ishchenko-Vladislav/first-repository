@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./allsrc/header/header";
 import Sidebar from "./allsrc/sidebar/sidebar";
@@ -19,11 +18,25 @@ function App(props) {
 
         <div className="main">
           <Routes>
-            <Route path="/Profile" element={<Profile state={props.state} />} />
+            <Route
+              path="/Profile"
+              element={
+                <Profile
+                  posts={props.state.posts}
+                  addPosts={props.addPosts}
+                  updatePostsText={props.updatePostsText}
+                />
+              }
+            />
 
             <Route
               path="/Message/*"
-              element={<Message state={props.state} />}
+              element={
+                <Message
+                  dialogs={props.state.dialogs}
+                  sendMessage={props.sendMessage}
+                />
+              }
             />
             <Route path="/News" element={<News />} />
             <Route path="/Music" element={<Music />} />
@@ -33,7 +46,7 @@ function App(props) {
           {/* <Profile /> */}
           {/* <Message /> */}
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </BrowserRouter>
   );

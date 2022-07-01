@@ -1,3 +1,59 @@
 .postsS {
 	display: flex;
+	margin-bottom: 20px;
+}
+.btnPost {
+	border: solid 1px grey;
+	padding: 0 30px;
+	outline: none; 
+	border-radius: 25px;
+	margin-left: 50px;
+	cursor: pointer;
+	background: none;
+	position: relative;
+	transition: 0.5s all;
+}
+
+.btnPost:hover {
+	color: red;
+	border:solid 1px red;
+	box-shadow: 0px 0px 10px red;
+	text-shadow: 0 0 5px red;
+}
+
+.btnPost::before {
+	content: "";
+	position: absolute;
+	left: 70%;
+	top:-5px;
+	width: 10px;
+	height: 5px;
+	border: solid 2px red;
+	transition: 0.5s all ease;
+	/* background: red; */
+}
+.btnPost:hover::before {
+	background: red;
+	opacity: 0.8;
+	border-radius: 5px;
+	left:20%;
+}
+
+.btnPost::after {
+	content: "";
+	position: absolute;
+	left: 20%;
+	bottom: -5px;
+	width: 10px;
+	height: 5px;
+	border: solid 2px red;
+	transition: 0.5s all ease;
+	/* background: red; */
+}
+
+.btnPost:hover::after {
+	background: red;
+	opacity: 0.8;
+	border-radius: 5px;
+	left: 70%;
 }
