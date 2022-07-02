@@ -19,6 +19,11 @@ const g = props.dialogs.dialog.map((user) => {
 		props.sendMessage(text)
 	}
 
+	const updateMessageText = () => {
+		let text = message.current.value;
+		props.sendMessageText(text);
+	}
+
 	return (
 		<div className={s.dialogs}>
 			<div className={s.dialog}>
@@ -29,7 +34,7 @@ const g = props.dialogs.dialog.map((user) => {
 				{m}
 				</div>
 				<div className={s.send}>
-					<input type="text" ref={message}></input>
+					<input onChange={updateMessageText} value={props.dialogs.messageText} type="text" ref={message}></input>
 					<button className={s.btnMessage} onClick={sendMessage}>Отправить сообщение</button>
 					</div>
 			</div>

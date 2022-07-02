@@ -35,6 +35,7 @@ function App(props) {
                 <Message
                   dialogs={props.state.dialogs}
                   sendMessage={props.sendMessage}
+                  sendMessageText={props.sendMessageText}
                 />
               }
             />
