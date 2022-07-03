@@ -8,8 +8,8 @@ function Sidebar() {
 			<li className={`${s.link}`}>
 				<NavLink className={ActiveLink}  to="/Profile">Profile</NavLink>
 			</li>
-			<li className={s.link}><NavLink className={ActiveLink} to="/Message">Message</NavLink></li>
-			<li className={s.link}><NavLink className={ActiveLink} to="/News">News</NavLink></li>
+			<li className={s.link}><NavLink className={ActiveLink} to="Message">Message</NavLink></li>
+			<li className={s.link}><NavLink className={ActiveLink} to="News">News</NavLink></li>
 			<li className={s.link}><NavLink className={ActiveLink} to="Music">Music</NavLink></li>
 			<li className={s.link}><NavLink className={ActiveLink} to="Settings">Settings</NavLink></li>
 		</ul>

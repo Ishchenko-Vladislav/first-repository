@@ -2,13 +2,15 @@ import s from "./message.module.css";
 // import {NavLink} from "react-router-dom"
 import Dialog from "./dialog/dialog";
 import React from "react";
+import { sendMessageActionCreator, updateMessageTextActionCreator } from "../allstate/message-reducer";
+
 
 
 const Message = (props) => {
-const g = props.dialogs.dialog.map((user) => {
+const g = props.dialogs.dialogs.dialog.map((user) => {
   return (<Dialog name={user.name} id={user.id} /> );
 });
-	const m = props.dialogs.message.map((message) => {
+	const m = props.dialogs.dialogs.message.map((message) => {
 		return (
 			<div>{message.message}</div>
 	);
@@ -16,12 +18,12 @@ const g = props.dialogs.dialog.map((user) => {
 	let message = React.useRef();
 	const sendMessage = () => {
 		let text = message.current.value;
-		props.sendMessage(text)
+		props.dispatch(sendMessageActionCreator(text))
 	}
 
 	const updateMessageText = () => {
 		let text = message.current.value;
-		props.sendMessageText(text);
+		props.dispatch(updateMessageTextActionCreator(text));
 	}
 
 	return (
@@ -34,7 +36,7 @@ const g = props.dialogs.dialog.map((user) => {
 				{m}
 				</div>
 				<div className={s.send}>
-					<input onChange={updateMessageText} value={props.dialogs.messageText} type="text" ref={message}></input>
+					<input onChange={updateMessageText} value={props.dialogs.dialogs.messageText} type="text" ref={message}></input>
 					<button className={s.btnMessage} onClick={sendMessage}>Отправить сообщение</button>
 					</div>
 			</div>

@@ -1,3 +1,6 @@
+import messageReducer from "./message-reducer";
+import postsReducer from "./posts-reducer";
+
 const store = {
   _state: {
     dialogs: {
@@ -18,40 +21,41 @@ const store = {
       newPostText: "введи текст",
     },
   },
-  getState() {
-    return this._state;
-  },
   _renderVirtualDOM() {},
   newRenderDOM(observe) {
     this._renderVirtualDOM = observe;
   },
-  addPosts() {
-    let newPost = {
-      message: this._state.posts.newPostText,
-    };
-    this._state.posts.post.push(newPost);
-    this._state.posts.newPostText = "";
-    this._renderVirtualDOM(this._state);
+  getState() {
+    return this._state;
   },
-  updatePostsText(value) {
-    this._state.posts.newPostText = value;
-    // let text = newPostsText;
+  dispatch(action) {
+    this._state.posts = postsReducer(this._state.posts, action);
+    this._state.dialogs = messageReducer(this._state.dialogs, action);
     this._renderVirtualDOM(this._state);
-  },
-  sendMessage(m) {
-    let newMessage = {
-      message: m,
-    };
-    this._state.dialogs.message.push(newMessage);
-    this._state.dialogs.messageText = "";
 
-    // state.posts.newPostText = "";
-    this._renderVirtualDOM(this._state);
-  },
-  sendMessageText(m) {
-    this._state.dialogs.messageText = m;
-    // state.posts.newPostText = "";
-    this._renderVirtualDOM(this._state);
+    /*
+    if (action.type === addPost) {
+      let newPost = {
+        message: this._state.posts.newPostText,
+      };
+      this._state.posts.post.push(newPost);
+      this._state.posts.newPostText = "";
+      this._renderVirtualDOM(this._state);
+    } else if (action.type === updatePostsText) {
+      this._state.posts.newPostText = action.value;
+      this._renderVirtualDOM(this._state);
+    } else if (action.type === sendMessage) {
+      let newMessage = {
+        message: action.m,
+      };
+      this._state.dialogs.message.push(newMessage);
+      this._state.dialogs.messageText = "";
+      this._renderVirtualDOM(this._state);
+    } else if (action.type === updateMessageText) {
+      this._state.dialogs.messageText = action.m;
+
+    }
+		*/
   },
 };
 

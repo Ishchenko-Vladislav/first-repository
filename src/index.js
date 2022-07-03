@@ -1,4 +1,4 @@
-import store from "./allsrc/allstate/state";
+import store from "./allsrc/allstate/redux-store";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -6,18 +6,15 @@ import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-function renderVirtualDOM() {
+function renderVirtualDOM(state) {
   root.render(
     <React.StrictMode>
-      <App
-        state={store.getState()}
-        addPosts={store.addPosts.bind(store)}
-        updatePostsText={store.updatePostsText.bind(store)}
-        sendMessage={store.sendMessage.bind(store)}
-        sendMessageText={store.sendMessageText.bind(store)}
-      />
+      <App store={state} dispatch={store.dispatch.bind(store)} />
     </React.StrictMode>
   );
 }
-renderVirtualDOM(store.getState);
-store.newRenderDOM(renderVirtualDOM);
+renderVirtualDOM(store.getState());
+store.subscribe(() => {
+  let state = store.getState();
+  renderVirtualDOM(state);
+});

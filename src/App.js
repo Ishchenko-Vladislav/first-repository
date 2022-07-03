@@ -15,27 +15,20 @@ function App(props) {
       <div className="wrapper">
         <Header />
         <Sidebar />
-
         <div className="main">
           <Routes>
             <Route
               path="/Profile"
               element={
-                <Profile
-                  posts={props.state.posts}
-                  addPosts={props.addPosts}
-                  updatePostsText={props.updatePostsText}
-                />
+                <Profile posts={props.store.posts} dispatch={props.dispatch} />
               }
             />
-
             <Route
               path="/Message/*"
               element={
                 <Message
-                  dialogs={props.state.dialogs}
-                  sendMessage={props.sendMessage}
-                  sendMessageText={props.sendMessageText}
+                  dialogs={props.store.dialogs}
+                  dispatch={props.dispatch}
                 />
               }
             />
